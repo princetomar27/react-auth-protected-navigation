@@ -10,6 +10,7 @@ import Lounge from "./components/Lounge";
 import LinkPage from "./components/LinkPage";
 import RequireAuth from "./components/RequireAuth";
 import { Routes, Route } from "react-router-dom";
+import Users from "./components/Users";
 
 const ROLES = {
   User: 2001,
@@ -29,7 +30,8 @@ function App() {
 
         {/* protected routes */}
         <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-          <Route path="/" element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="users" element={<Users />} />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.Editor]} />}>
